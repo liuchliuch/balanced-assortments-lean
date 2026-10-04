@@ -29,6 +29,17 @@ def run(command):
     print('+ '+' '.join(command), flush=True)
     subprocess.run(command, cwd=ROOT, check=True)
 
+def check_checksums(filename):
+    for line in (ROOT/filename).read_text().splitlines():
+        if not line.strip():
+            continue
+        expected, relative = line.split(maxsplit=1)
+        relative = relative.removeprefix('*')
+        path = (ROOT/relative).resolve()
+        assert path.is_relative_to(ROOT), 'Checksum path escapes the project'
+        assert hashlib.sha256(path.read_bytes()).hexdigest() == expected, 'Original source checksum differs: '+relative
+        print('ORIGINAL_SOURCE_CHECKSUM_PASS '+relative, flush=True)
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--no-clean', action='store_true', help='Reuse existing project objects for a local recheck')
@@ -41,7 +52,7 @@ def main():
     run(['lake', 'build', LIBRARY])
     run(['lake', 'env', 'lean', '--trust=0', 'scripts/AxiomAudit.lean'])
     run([sys.executable, 'scripts/regressions.py', '--out', '.lake/publication/regressions'])
-    run(['sha256sum', '-c', 'paper/SHA256SUMS'])
+    check_checksums('paper/SHA256SUMS')
     check_inputs()
     directory=ROOT/'.lake/publication';directory.mkdir(parents=True, exist_ok=True)
     (directory/'result.json').write_text(json.dumps({'status':'PASS','mathematical_inputs':len(paths),'clean_project_build':not args.no_clean,'kernel':'pinned Lean kernel, trust=0','permitted_axioms':['propext','Classical.choice','Quot.sound']}, indent=2)+'\n')

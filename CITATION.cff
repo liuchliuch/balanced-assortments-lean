@@ -1,0 +1,13 @@
+cff-version: 1.2.0
+message: "Please cite the accompanying paper when using this formalization."
+title: "Cardinality-Constrained Randomized Assortments with Balanced Market Share"
+type: article
+authors:
+  - family-names: Deng
+    given-names: Xiaotie
+  - family-names: Li
+    given-names: Hanyu
+  - family-names: Liu
+    given-names: Chenghua
+year: 2026
+url: "https://arxiv.org/abs/2609.35802"

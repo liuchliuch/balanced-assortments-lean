@@ -1,0 +1,10 @@
+import BalancedAssortments.CookLevinStackPolynomialReduction
+import BalancedAssortments.ComplexitySourcePolicyLanguage
+import BalancedAssortments.CookLevinStackTableauProgram
+import BalancedAssortments.CookLevinStackTypedCorrect
+#print axioms BalancedAssortments.CookLevin.StackTableau.tableauPolynomialProgram
+#print axioms BalancedAssortments.CookLevin.StackTableau.program_raw
+#print axioms BalancedAssortments.CookLevin.StackTableau.raw_satisfiable_iff
+
+#print axioms BalancedAssortments.CookLevin.StackTableau.np_to_cnf
+#print axioms BalancedAssortments.ComplexityTimeSourceParsing.sourceYes_iff_policy

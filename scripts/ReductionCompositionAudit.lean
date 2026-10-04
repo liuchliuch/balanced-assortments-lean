@@ -1,0 +1,7 @@
+import BalancedAssortments.NPStackSourcePolynomial
+import BalancedAssortments.NPPolynomialComposition
+import BalancedAssortments.NPStackSignedAssignCompareCorrect
+#print axioms BalancedAssortments.NPStackSourceReduction.positiveSubsetSum_reduces_source
+#print axioms BalancedAssortments.NPStackSourceReduction.reductionSpec_legal
+#print axioms BalancedAssortments.NPStack.PolyManyOne.trans
+#print axioms BalancedAssortments.NPStack.SignedAssignCompare.guard_halted_result

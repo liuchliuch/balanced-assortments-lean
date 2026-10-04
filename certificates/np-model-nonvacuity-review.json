@@ -1,0 +1,56 @@
+{
+  "review": "Conventional NP/model nonvacuity and end-to-end encoding audit",
+  "timestamp_utc": "2026-10-03T17:32:38.514127+00:00",
+  "verdict": "accepted at the stated concrete-machine and designated-output-track boundary",
+  "scope": "Read-only inspection of definitions, quantifiers, finite operational interfaces, decoder semantics, final endpoint composition, and targeted kernel/axiom checks. This is not a second reconstruction of every imported simulation proof. NPStackMachine and the new output-observation/determinism modules were authored by this reviewer and are not claimed as independently implementation-reviewed here.",
+  "findings": [
+    "InNP quantifies one fixed finite one-tape nondeterministic machine and one natural-coefficient polynomial before universally quantifying all binary input words. Its tape starts with exactly those bits and blank elsewhere; each step selects one global finite rule and updates one cell/head/state.",
+    "Acceptance within the clock is the explicit conventional clocked-machine convention. It is not an arbitrary certificate predicate, input-dependent machine, restricted set of source machines, or promise of satisfiability. Arbitrary Machine and Polynomial witnesses are passed through CookLevin.np_to_cnf for arbitrary languages.",
+    "Kernel-checked audit examples establish that every Machine/Polynomial bounded-acceptance language satisfies InNP by definition, and both the empty language and universal language have concrete zero-clock machine witnesses. Thus the class is not empty or a single vacuous predicate.",
+    "PolynomialProgram requires a finite control type and finite collection of Boolean stacks, NoChoice on the full instruction table, and a bounded real accepting output Run for every input. PolyManyOne universally requires the exact language iff. It has no supplied runtime arithmetic or semantic callback instruction.",
+    "The numbered one-tape compiler has a finite multi-track alphabet. Its exact finite-table decoding, raw input initialization, stack-height-dependent forward simulation and all-accepting backward simulation are proved. Fixed finite table/alphabet size is a program constant, not an input-dependent unit-cost operation.",
+    "PolynomialProgram.one_tape_output now explicitly exports an actual numbered one-tape execution from raw input within clockPolynomial, accepting at head zero, with every designated output-track cell equal to the bottom-to-top encoding of f(input), including the terminal None cells.",
+    "NPPolynomialDeterministicSimulation now proves global Step uniqueness for the exact numbered compiled machine whenever the source is NoChoice. The proof handles every control/symbol pair, including initialization and unreachable microstates, by singleton local actions and injective finite rule coding. PolynomialProgram.one_tape_deterministic is the direct exported corollary; it applies to the same machine as one_tape_output.",
+    "Composition uses actual finite instruction embedding and two charged reversal transfers. Its polynomial accounts for the first output length and second-program clock. It is not semantic composition with an assumed cost counter.",
+    "PaperTheoremTwo quantifies hardness over every language satisfying InNP. Both general and fixed K=2/alpha=1 original randomized-MNL policy languages are exactly equated with the independent parsed real-feasibility source predicates.",
+    "The source decoder/legality predicate covers malformed data, declared-count consistency, positive prices/attractions/denominators, 0<alpha<=1, and 1<=K<=n, while target revenue may have either sign. Fixed parameters are numerical, retaining redundant rational and bit encodings.",
+    "No extra operational, LP, Subset Sum completeness, Cook-Levin, normalization, legal-input, or certificate-size premise remains in the exported PaperTheoremTwo NPComplete endpoints."
+  ],
+  "algorithm_boundary": [
+    "Finite-state enumeration uses Classical.choice/Fintype.equivFin. These choices determine fixed finite tables; they are not runtime oracles. Some composed definitions consequently do not support direct Lean native #eval extraction without an executable enumeration refinement.",
+    "The one-tape output theorem preserves a designated encoded finite-alphabet track. No cleanup into a standalone plain binary output tape is asserted. The proof-side decodedSymbol observation is a fixed finite inverse table.",
+    "The theorem is about counted primitive transitions and their concrete-machine simulation, not measured host-language running time, compiler wall-clock time, or executable artifact performance."
+  ],
+  "trust": {
+    "lean": "4.24.0",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "targeted_log": "certificates/np-model-axioms.log",
+    "new_output_module": "BalancedAssortments/NPPolynomialOutputSimulation.lean",
+    "new_determinism_module": "BalancedAssortments/NPPolynomialDeterministicSimulation.lean"
+  },
+  "sources": {
+    "BalancedAssortments/NPMachineModel.lean": "ea1ba4ee725b32d6b896e75236b18354b1402a90969f5708ca118cb58bebd4c6",
+    "BalancedAssortments/NPMachineFiniteBridge.lean": "20d5eb6fc5f4d43f50bbb71b1259d926bf4b8aa49f2eba4f1bc194467e49457f",
+    "BalancedAssortments/NPMachineLocal.lean": "7f32a197f1428c444981cab293f84e6b7f1512a77168e0fa82e7b3d0ea181619",
+    "BalancedAssortments/NPPolynomialPrograms.lean": "fd30f122e80e05c0290ea9ce4930be999f43400cc12a9cd5b4807869933c40f5",
+    "BalancedAssortments/NPPolynomialComposition.lean": "9b32fd026192e8c3acbfbd04b586552b29d2f33291d4764326f0e163597fab78",
+    "BalancedAssortments/NPStackCompile.lean": "0fae1b0fbd2328aeb33180c49cec1afb875946a84b4578253e55e048b9c94642",
+    "BalancedAssortments/NPStackTapeMachine.lean": "6f02e8e810217026556f7b854da6a29d27581a5e3de41d58b4ae686698c016b6",
+    "BalancedAssortments/NPStackTapeSimulation.lean": "a48403a4f4f61b1600750dfe3e882cdd6707d5dca7ae2540e988c693ef2c7566",
+    "BalancedAssortments/NPStackTapeInitialize.lean": "d8365ed6c710440863fafadcf696f07747004462173632ea589121cf2f334d17",
+    "BalancedAssortments/NPStackTapeInitializeSound.lean": "f8eecad24e2e078c2743ed7d58276d979bd6ee83dabd3db0d45fe09253711c85",
+    "BalancedAssortments/NPStackTapeAcceptance.lean": "e7130b4e164d5ad60b196e7ca3eaa207d207d5692f8361fa3311c43e4a8a90b3",
+    "BalancedAssortments/CookLevinStackPolynomialReduction.lean": "643f574c5bacfe2ad7ac2038277a74cae55d4038181e2407c4aaa069029bf4c4",
+    "BalancedAssortments/PaperTheoremTwo.lean": "b3e6e1c43ced59f447bb7379f55510c3b72e6ad67b46d68a262348d0d0748aad",
+    "BalancedAssortments/ComplexitySourcePolicyLanguage.lean": "29eb3c3f9e03608d8333a4aa1bdc35dab24edcb559207ceb2af9f43aa7a149ce",
+    "BalancedAssortments/ComplexityTimeFixedSourceLanguage.lean": "c1bd3c44832961801bdce6baf4287019f7c67e8d7bfff257a7e9735b6d061083",
+    "BalancedAssortments/NPStackSourceMembership.lean": "45a7c4b9c6e0194690cd9c5568fe1447c25a5d1b480a8c5c45259059a8446ea1",
+    "BalancedAssortments/NPStackSourceFixedMembership.lean": "d02f5699bcc5e3d930e3963ab4de73bcaa98638711ba7d9f0cc1127c269cce99",
+    "BalancedAssortments/NPPolynomialOutputSimulation.lean": "2ebaaf492920e77cb06bd5ac50b03ecbfadf03782bc6e8c96a8b22d30a074d6c",
+    "BalancedAssortments/NPPolynomialDeterministicSimulation.lean": "eb9b5210c36689a8235a3d73b7bcec5f2db5808b1a0173479268ca525e91daa6"
+  }
+}

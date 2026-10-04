@@ -1,0 +1,10 @@
+.lake/
+.toolchain/
+.build/
+.cache/
+logs/
+__pycache__/
+.DS_Store
+*.olean
+*.ilean
+/*.zip

@@ -1,0 +1,9 @@
+import BalancedAssortments.NPStackSignedMultiplySound
+import BalancedAssortments.NPStackFieldsCorrect
+import BalancedAssortments.NPStackEmbeddingDeterministic
+#print axioms BalancedAssortments.NPStack.signedMultiply_refines
+#print axioms BalancedAssortments.NPStack.signedMultiply_accepting_result
+#print axioms BalancedAssortments.NPStackFields.wellFramed_inNP
+#print axioms BalancedAssortments.NPStack.Step.reflect
+#print axioms BalancedAssortments.NPStack.DeterministicRun.factor_halted
+#print axioms BalancedAssortments.NPStack.Run.relocate_deterministic_exact

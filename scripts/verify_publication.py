@@ -7,9 +7,9 @@ LIBRARY = 'BalancedAssortments'
 PACKAGE = 'balanced-assortments'
 
 def check_inputs():
-    original = json.loads((ROOT/'docs/release-candidate/source-inventory.json').read_text())['sources']
-    paths = {name for name in original if name.endswith('.lean')} | {'lean-toolchain', 'lakefile.toml', 'lake-manifest.json'}
-    actual = {p.relative_to(ROOT).as_posix() for folder in [ROOT/LIBRARY, ROOT/'scripts'] for p in folder.rglob('*.lean')} | {LIBRARY+'.lean'}
+    original = json.loads((ROOT/'verification/library-provenance.json').read_text())['sources']
+    paths = {name for name in original if name.endswith('.lean')} | {'lean-toolchain', 'lake-manifest.json'}
+    actual = {p.relative_to(ROOT).as_posix() for p in (ROOT/LIBRARY).rglob('*.lean')} | {LIBRARY+'.lean'} | {name for name in original if name.startswith('scripts/') and name.endswith('.lean')}
     assert {name for name in paths if name.endswith('.lean')} == actual, 'Mathematical input inventory differs from the recorded release'
     for name in sorted(paths):
         assert hashlib.sha256((ROOT/name).read_bytes()).hexdigest() == original[name], 'Recorded mathematical input changed: '+name
@@ -46,16 +46,19 @@ def main():
     args=parser.parse_args()
     os.chdir(ROOT)
     paths=check_inputs()
+    before=subprocess.check_output([sys.executable,'scripts/snapshot.py'],cwd=ROOT,text=True)
     run([sys.executable, 'scripts/check_project.py', '--release'])
     if not args.no_clean:
         run(['lake', 'clean', PACKAGE])
-    run(['lake', 'build', LIBRARY])
+    run(['lake', 'build', LIBRARY, 'AuditSolutions'])
+    run(['lake', 'env', 'lean', '--trust=0', 'scripts/AuditWitnesses.lean'])
     run(['lake', 'env', 'lean', '--trust=0', 'scripts/AxiomAudit.lean'])
     run([sys.executable, 'scripts/regressions.py', '--out', '.lake/publication/regressions'])
     check_checksums('paper/SHA256SUMS')
     check_inputs()
+    assert subprocess.check_output([sys.executable,'scripts/snapshot.py'],cwd=ROOT,text=True)==before, 'Verification inputs changed during checks'
     directory=ROOT/'.lake/publication';directory.mkdir(parents=True, exist_ok=True)
-    (directory/'result.json').write_text(json.dumps({'status':'PASS','mathematical_inputs':len(paths),'clean_project_build':not args.no_clean,'kernel':'pinned Lean kernel, trust=0','permitted_axioms':['propext','Classical.choice','Quot.sound']}, indent=2)+'\n')
+    (directory/'result.json').write_text(json.dumps({'source_snapshot':hashlib.sha256(before.encode()).hexdigest(),'status':'PASS','mathematical_inputs':len(paths),'clean_project_build':not args.no_clean,'kernel':'pinned Lean kernel, trust=0','permitted_axioms':['propext','Classical.choice','Quot.sound']}, indent=2)+'\n')
     print('PUBLICATION_VERIFICATION_PASS', flush=True)
 
 if __name__=='__main__':

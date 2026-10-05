@@ -1,6 +1,6 @@
 name = "balanced-assortments"
 version = "0.1.0"
-defaultTargets = ["BalancedAssortments"]
+defaultTargets = ["BalancedAssortments", "AuditSolutions"]
 
 [[require]]
 name = "mathlib"
@@ -9,3 +9,23 @@ rev = "f897ebcf72cd16f89ab4577d0c826cd14afaafc7"
 
 [[lean_lib]]
 name = "BalancedAssortments"
+
+[[lean_lib]]
+name = "AuditSolutions"
+roots = ["Audit.Solutions"]
+
+[[lean_lib]]
+name = "AuditStatements"
+roots = ["Audit.Statements"]
+
+[[lean_lib]]
+name = "AuditNegativeStatements"
+roots = ["Audit.NegativeStatements"]
+
+[[lean_lib]]
+name = "AuditNegativePremise"
+roots = ["Audit.NegativePremise"]
+
+[[lean_lib]]
+name = "AuditNegativeAxiom"
+roots = ["Audit.NegativeAxiom"]

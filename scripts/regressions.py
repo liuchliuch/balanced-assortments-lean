@@ -14,7 +14,7 @@ for src in sorted((r/'BalancedAssortments').rglob('*Examples.lean')):
  rel=src.relative_to(r);log=out/('.'.join(rel.with_suffix('').parts)+'.log')
  before=hashlib.sha256(src.read_bytes()).hexdigest()
  with log.open('w') as f:
-  code=subprocess.run(['bash',str(r/'scripts/lean.sh'),'-j1',str(rel)],cwd=r,stdout=f,stderr=subprocess.STDOUT).returncode
+  code=subprocess.run(['lake','env','lean','--trust=0','-j1',str(rel)],cwd=r,stdout=f,stderr=subprocess.STDOUT).returncode
  after=hashlib.sha256(src.read_bytes()).hexdigest()
  status='SOURCE_CHANGED_DURING_CHECK' if before!=after else ('PASS' if code==0 else 'FAIL')
  result={'source':str(rel),'sha256_before':before,'sha256_after':after,'exit_code':code,'status':status,'log':str(log)}

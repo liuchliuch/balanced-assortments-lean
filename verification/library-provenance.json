@@ -1,60 +1,7 @@
 {
-  "packages": [
-    {
-      "commit": "f897ebcf72cd16f89ab4577d0c826cd14afaafc7",
-      "name": "mathlib",
-      "tracked_worktree_clean": true,
-      "tree": "cc75da45fdf688428e8428881ac939b8ec11001b"
-    },
-    {
-      "commit": "dfd06ebfe8d0e8fa7faba9cb5e5a2e74e7bd2805",
-      "name": "plausible",
-      "tracked_worktree_clean": true,
-      "tree": "efef3022ea632ae758f051419d2436430bec0d11"
-    },
-    {
-      "commit": "99657ad92e23804e279f77ea6dbdeebaa1317b98",
-      "name": "LeanSearchClient",
-      "tracked_worktree_clean": true,
-      "tree": "7cdcb52de1c022771e1e2e3c65c48114ddde714d"
-    },
-    {
-      "commit": "d768126816be17600904726ca7976b185786e6b9",
-      "name": "importGraph",
-      "tracked_worktree_clean": true,
-      "tree": "3fa3bc327b11ff91d430d4a66e473adf59c67374"
-    },
-    {
-      "commit": "556caed0eadb7901e068131d1be208dd907d07a2",
-      "name": "proofwidgets",
-      "tracked_worktree_clean": true,
-      "tree": "18c3d4d0a9af448c6ab0e9bd8e7e36212ac0afa1"
-    },
-    {
-      "commit": "725ac8cd67acd70a7beaf47c3725e23484c1ef50",
-      "name": "aesop",
-      "tracked_worktree_clean": true,
-      "tree": "d39ece512df321373f81eb3167872e375fbc5bd2"
-    },
-    {
-      "commit": "dea6a3361fa36d5a13f87333dc506ada582e025c",
-      "name": "Qq",
-      "tracked_worktree_clean": true,
-      "tree": "294dfa7ecb74bee2d19612343a6d79328f589673"
-    },
-    {
-      "commit": "8da40b72fece29b7d3fe3d768bac4c8910ce9bee",
-      "name": "batteries",
-      "tracked_worktree_clean": true,
-      "tree": "b12fd575b2bf00c1038332b4a48636079d3fe6fe"
-    },
-    {
-      "commit": "91c18fa62838ad0ab7384c03c9684d99d306e1da",
-      "name": "Cli",
-      "tracked_worktree_clean": true,
-      "tree": "3feddd3f45bc0688b42182e7c2e860005abd3961"
-    }
-  ],
+  "schema_version": 1,
+  "baseline_commit": "0ac5c3643a95020133ccfa3788824e0a80245640",
+  "scope": "Unchanged production proofs, existing Lean regression/audit sources, compiler and mathematical dependency lock. Audit/ and publication tooling are added separately.",
   "sources": {
     "BalancedAssortments.lean": "2216b22d4a3584b4dea1f3c063b615f8cde3d1ef015e41dff0320596abdfab66",
     "BalancedAssortments/Approximation.lean": "bb924d88c5dbb768d1552660f55c8e3ac80e4d6832cfbee360998a272ba5865c",
@@ -655,46 +602,13 @@
     "BalancedAssortments/RealDecomposition.lean": "c247905080b37a4506ee9c2b3350a745556438ac4b82d88ffb4f849e4322103f",
     "BalancedAssortments/Sales.lean": "b16a6114ed5a93157858548fd20e89d25f677ee6d586cd47478dc06277ccb3dc",
     "BalancedAssortments/SalesIntegration.lean": "079ce5789a13ac6f7303b0e268d82aa3f5c7f3a72a77723d43b250509f0eb01d",
-    "README.md": "566f8b6cf0263b6a78ee469a74d2114c6ab099bc40e3b12902b4f2b822870a6f",
-    "STATUS.md": "5e277ec1f1699bddc3bf8f7a75288624ffc1e1fa3cdd27bc3117012b95a1c560",
-    "docs/BIT_MODEL_REVIEW.md": "6ac61a290dc2d82a520c361d5254a550fcf49a3048e2614f6a814cc62adc3e54",
-    "docs/CLAIM_LEDGER.md": "13b78bad3d58a657d7880c780771f6066e1441d02d983031b815108949fdb9fe",
-    "docs/EXTERNAL_DEPENDENCIES.md": "efaf6905d68d1defb282df28a7695c10e11a443829829e6d393c95b7925389c0",
-    "docs/FIXED_SUPPORT_ALTERNATIVE.md": "1317851692bbe93019dffd9c51d789748f52a9c05104b8994ed08263979250f8",
-    "docs/SEMANTIC_REVIEW.md": "1c3ddbb0526e24b48829394f7d1f6bf438f3891237a4e1d29a7f2f30703c4eeb",
-    "docs/TODO.md": "3fffae01b7c53bb6087ba0abd8d854d850cb10bc726c2e33025e2090ae65a35b",
     "lake-manifest.json": "9e66c7375187067217a3c08c8b6128b99287703db7eb539a25232cb06d54bb28",
-    "lakefile.toml": "d5576d592d13095fd1c5e0660c1732ab8c0d604db13c6b2508aca57a24f337dc",
     "lean-toolchain": "42779d67b81608af8a12aa4328d2ab47ca201925b3b2bd68369587b5340bb434",
-    "paper/00README.json": "a6b7f1fabbcba3c7add4c325995f70321b4112db351b3c997e7f379074bdcf8d",
-    "paper/75-Cardinality-Constrained_Randomized_Assortments_with_Balanced_Market_Share.tex": "21284e8742a6c879a19e06c5289ffb07e63e5776fa054eb286a2f47cef120fa2",
-    "paper/SHA256SUMS": "c4a12888338cde83974dcc2b7cdb4f68a5ad3cc3f5cfa138766d18351ffa89f1",
-    "paper/external-investigation/SHA256SUMS": "3da22181c2aaf9a1abb3afbdbc044e0a824049f19c3dfe57af0a0d650ef2f08a",
-    "paper/external-investigation/clrs-lean-toolchain.txt": "2c290dc3675a4faf0bc03545ff71a417d2f9a7c2e60e8be80ed643fcbcc73e2d",
-    "paper/paper.pdf": "4281730ecffe0eff24ac443eace58adc3d1c9194ef04994d37f9b3f32754b1dc",
-    "paper/source.tar": "d755b0617c56e45dea74650eda9a96cf630ae5f9805f98695ee8eea7b6149ed3",
     "scripts/ApproximationAudit.lean": "d369cb2850bd16261408379097c3f69f032baa4d50faf5986220feea040ddab9",
     "scripts/AxiomAudit.lean": "ba4eda9e69d6cce4ccc48f3f071eb28a9d6bf250673d38ef4399c11a9898a103",
     "scripts/CookOperationalAudit.lean": "157bedd95746a2d88acb70df4446460ac7c3bfed696385af9772adefe7be13ba",
     "scripts/NPReductionAudit.lean": "356a2f9dc37918480ee5866d84d0765a75b4811b700ca222baaff797c7928ae1",
     "scripts/OperationalAudit.lean": "7c3e2c630650b37a18e4967b20e874479b3aa901aafc85e090ed4e1f06a0a219",
-    "scripts/ReductionCompositionAudit.lean": "e0f514f6241c82b06646c54443919ae8ba5bd856db168c062f2d0a45481e47bc",
-    "scripts/bootstrap.sh": "d9a923402250054c269e05f7b1b8e41e0a694389353f7d9a620872654f4e5460",
-    "scripts/build.sh": "92f227c370dca4d6842ec912f8a799bdfb53693a6bc3862406c97920de7655b8",
-    "scripts/check_project.py": "f8f505c12f5bf08cb91772aa70b1c69ecf0de384e14d2dd6c092a29973f2b85b",
-    "scripts/checkpoint.sh": "96110b802a2a37ef3ee629eb5e750b888677b8f8bd7010ec28b9126a66603adf",
-    "scripts/lean.sh": "1ece25554597189d66cbd4a7e05dbf97f6834bfe566eab28ad4cda0da3772dbf",
-    "scripts/pack_source.py": "56b35a4556acdbbc33cdebf6384ed519ede7a4ab1f30f54d545f87014cc22cb0",
-    "scripts/regressions.py": "c142aa41f1e04c804e3b66bfcd293cbf52fe66730485bcc6476e0da27e875dbb",
-    "scripts/snapshot.py": "7b8ffef6f7cfff4afbe63235d79caf8967a74baca1b6e253e92c71a577c94a82",
-    "scripts/test_verification_scheduler.py": "fc73f8bad4d1882f7f63fb310f8be436f2bcd8cac46dfd3396e010f0214ddd33",
-    "scripts/update_imports.py": "f768f77e810499a2bccac40455bdffdde32046594f9741990d26074ab391a720",
-    "scripts/verification_scheduler.py": "2a3ab6f019f5860d6937524f35dcdeae31211fd2396d72b345a305966aa344ce",
-    "scripts/verify_snapshot.py": "fafcfeca298ae9d36d96472bce432d5fc4ad95e7c4115f9edd4f9df10e70af21"
-  },
-  "toolchain": {
-    "git_hash": "797c613eb9b6d4ec95db23e3e00af9ac6657f24b",
-    "lean_binary_sha256": "8fadc3ed92cc9decb94c96ee9c0876e91e03a3a5e69138f32114f02789e2766c",
-    "version": "Lean (version 4.24.0, x86_64-unknown-linux-gnu, commit 797c613eb9b6d4ec95db23e3e00af9ac6657f24b, Release)"
+    "scripts/ReductionCompositionAudit.lean": "e0f514f6241c82b06646c54443919ae8ba5bd856db168c062f2d0a45481e47bc"
   }
 }

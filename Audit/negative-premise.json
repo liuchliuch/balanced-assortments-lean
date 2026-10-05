@@ -1,0 +1,14 @@
+{
+  "challenge_module": "Audit.NegativeStatements",
+  "solution_module": "Audit.NegativePremise",
+  "theorem_names": [
+    "BalancedAssortmentsAudit.claim_001"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "enable_nanoda": false
+}
